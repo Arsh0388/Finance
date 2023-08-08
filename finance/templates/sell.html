@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+<form action = "/sell" method = "POST">
+<select name = "stock" >
+    <option disabled selected> sport </option>
+    {% for name in all_stocks %}
+    <option value = "{{ name['stock'] }}">{{ name["stock"] }}</option>
+    {% endfor %}
+</select>
+<br><br>
+<input autocomplete = "off" autofocus class="form-control mx-auto w-auto" id="sell" name = "no_of_shares" type = "integer" palceholder = "number">
+<br><br>
+<button type = "submit">Sell</button>
+</form>
+{% endblock%}
