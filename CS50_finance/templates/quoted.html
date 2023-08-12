@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<div class="container" style="display: flex; height: 100px;">
+    <div style="width: 50% height: 50%; ">
+        <ul>
+            {% for key in stock_data[0].keys() %}
+            <li> {{ key}} : {{ stock_data[0][key] }}  </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div style="flex-grow: 1; ">
+        <ul>
+            {% for key in stock_price.keys() %}
+            <li> {{ key}} : {{ stock_price[key] }}  </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<br><br><br><br>
+<div style = "height: 30% flex-grow: 1">
+    <img src = "static/stock_plot.png" alt-text = "stock_chart">
+</div>
+
+{% endblock %}

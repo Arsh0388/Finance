@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<form action ="/quote" method = "post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="stock" name="stock" placeholder="stock" type="text">
+</div>
+<select name = "duration" id = "duration">
+    <option disabled selected> duration </option>
+    <option value = "1d">1d</option>
+    <option value = "1mo">1m</option>
+    <option value = "3mo">3m</option>
+    <option value = "6mo">6m</option>
+    <option value = "1y">1y</option>
+    <option value = "3y">3y</option>
+</select>
+<br><br>
+    <button class="btn btn-primary" type="submit">Quote</button>
+</form>
+{% endblock %}
