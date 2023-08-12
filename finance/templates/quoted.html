@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<ul>
+    {% for key in stock_data.keys() %}
+    <li> {{ key}} : {{ stock_data[key] }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
