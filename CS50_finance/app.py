@@ -140,7 +140,7 @@ def history():
     """Show history of transactions"""
     # showing the history by accessing the username and
     username = db.execute("SELECT * FROM users WHERE id = ?",session["user_id"])[0]["username"]
-    data = db.execute("SELECT * FROM history WHERE username = ?",username)
+    data = db.execute("SELECT * FROM history WHERE username = ? ORDER BY date DESC",username)
     if data is None:
         return apology("TODO")
     for row_data in data :
